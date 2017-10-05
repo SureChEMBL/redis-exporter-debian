@@ -1,0 +1,23 @@
+Source: prometheus-redis-exporter
+Section: net
+Priority: extra
+Maintainer: Yury Zavarin <yzavarin@ebi.ac.uk>
+Build-Depends:
+ debhelper (>= 9.0.0),
+ dh-golang (>= 0.17~),
+ golang-any,
+Standards-Version: 3.9.8
+Vcs-Git: https://github.com/SureChEMBL/redis-exporter-debian.git
+Vcs-Browser: https://github.com/SureChEMBL/redis-exporter-debian
+Homepage: https://github.com/oliver006/redis_exporter
+Testsuite: autopkgtest
+
+Package: prometheus-redis-exporter
+Architecture: any
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ daemon,
+Built-Using: ${misc:Built-Using}
+Description: Prometheus exporter for Redis metrics
+ Prometheus exporter for Redis metrics, written in Go.

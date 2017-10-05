@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+#export DH_VERBOSE=1
+export DH_GOPKG := github.com/oliver006/redis_exporter
+
+BUILDDIR := build
+
+DEBPKGNAME ?= $(shell dpkg-parsechangelog | sed -n -e 's/^Source: //p')
+
+%:
+	dh $@ --buildsystem=golang --with=golang,systemd --builddir=$(BUILDDIR)
+
+override_dh_auto_install:
+	cp -v $(BUILDDIR)/bin/redis_exporter \
+            debian/$(DEBPKGNAME)/usr/bin/$(DEBPKGNAME)

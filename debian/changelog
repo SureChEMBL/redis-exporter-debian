@@ -1,0 +1,5 @@
+prometheus-redis-exporter (0.12.2-1) unstable; urgency=medium
+
+  * Initial release.
+
+ -- Yury Zavarin <yzavarin@ebi.ac.uk>  Thu, 05 Oct 2017 10:36:48 +0100

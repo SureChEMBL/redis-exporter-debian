@@ -1,0 +1,12 @@
+[Unit]
+Description=Prometheus exporter for Redis
+Documentation=https://github.com/oliver006/redis_exporter
+
+[Service]
+Restart=always
+User=prometheus
+EnvironmentFile=/etc/default/prometheus-redis-exporter
+ExecStart=/usr/bin/prometheus-redis-exporter $ARGS
+
+[Install]
+WantedBy=multi-user.target
