@@ -6,6 +6,10 @@ Build-Depends:
  debhelper (>= 9.0.0),
  dh-golang (>= 0.17~),
  golang-any,
+ golang-github-garyburd-redigo-dev,
+ golang-github-prometheus-client-golang-dev,
+ golang-github-prometheus-client-model-dev,
+ golang-github-sirupsen-logrus-dev,
 Standards-Version: 3.9.8
 Vcs-Git: https://github.com/SureChEMBL/redis-exporter-debian.git
 Vcs-Browser: https://github.com/SureChEMBL/redis-exporter-debian
