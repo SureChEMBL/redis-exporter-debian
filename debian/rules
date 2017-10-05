@@ -10,6 +10,9 @@ DEBPKGNAME ?= $(shell dpkg-parsechangelog | sed -n -e 's/^Source: //p')
 %:
 	dh $@ --buildsystem=golang --with=golang,systemd --builddir=$(BUILDDIR)
 
+override_dh_auto_test:
+	# No tests, as it requires redis-server to be installed.
+
 override_dh_auto_install:
 	cp -v $(BUILDDIR)/bin/redis_exporter \
             debian/$(DEBPKGNAME)/usr/bin/$(DEBPKGNAME)
